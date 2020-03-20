@@ -140,7 +140,7 @@ d3.tsv("data/covid_tests.tsv", function(error, data) {
   country.append("path")
       .attr("class", "line")
       .attr("data-legend",function(d) { return d.name})
-      .style("stroke", function(d) { if (d.name == "KOR") 
+      .style("stroke", function(d) { if (d.name == "S. KOREA") 
                                         {return "rgb(000,255,000)"}
                                       else {return "#000";}
                                          });
@@ -155,7 +155,7 @@ d3.tsv("data/covid_tests.tsv", function(error, data) {
   var path = svg.selectAll(".country").append("path")
       .attr("class", "line")
       .attr("d", function(d) { return line(d.values); })
-      .style("stroke", function(d) { if (d.name == "KOR") 
+      .style("stroke", function(d) { if (d.name == "S. KOREA") 
                                         {return "rgb(000,255,000)"}
                                       else {return "#000";}
                                          });
