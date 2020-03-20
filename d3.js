@@ -1,43 +1,6 @@
-
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-
-body {
-  font: 12px Helvetica;
-}
-
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 2px;
-}
-
-.legend rect {
-  fill:white;
-  stroke:black;
-  opacity:0.8;}
-
-</style>
-<body>
-<script src="https://d3js.org/d3.v3.js"></script>
-<script src="code/d3.legend.js"></script>
-<div id="container"></div>
-<script>
-
-var margin = {top: 50, right: 100, bottom: 30, left: 100},
-    width = 800 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
+var margin = {top: 50, right: 50, bottom: 30, left: 50},
+    width = 630 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y-%m-%d").parse;
 
@@ -70,10 +33,10 @@ var line = d3.svg.line()
     .y(function(d) { return y(d.tests); });
 
 
-var svg = d3.select("#container").append("svg")
+var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-    .append("g")
+  .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.tsv("data/covid_tests.tsv", function(error, data) {
@@ -196,5 +159,3 @@ console.log(totalLength);
         .attr("stroke-dashoffset", 0);
 
 });
-
-</script>
