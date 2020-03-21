@@ -1,4 +1,4 @@
-date,US,KOR,US_confirmed_cases,SKorea_confirmed_cases
+date,US_tests,SKorea_tests,US_confirmed_cases,SKorea_confirmed_cases
 2020-02-09,362,639.0,62.0,25.0
 2020-02-10,371,436.0,62.0,27.0
 2020-02-11,951,1549.0,2.0,28.0
