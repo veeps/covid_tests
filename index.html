@@ -107,7 +107,14 @@ d3.tsv("data/covid_tests.tsv", function(error, data) {
 
   svg.append("g")
       .attr("class", "y axis")
-      .call(yAxis);
+      .call(yAxis)
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "-7em")
+      .style("text-anchor", "end")
+      .text("Number of People Tested Daily");
+
 
   svg.append("text")
       .attr("x", (width / 2))             
